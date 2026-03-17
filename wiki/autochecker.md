@@ -59,7 +59,7 @@ Open in `Telegram`: <https://t.me/auchebot>.
 
 1. [Connect to your VM as the user `<user>`](./vm-access.md#connect-to-your-vm-by-ssh-as-the-user-user-local).
 
-2. To check whether the public `SSH` key is already present,
+2. To check whether the `SSH` public key is already present,
 
    [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
 
