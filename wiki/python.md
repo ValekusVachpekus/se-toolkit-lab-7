@@ -77,11 +77,24 @@ Docs:
 
 #### Install `uv` using the commands from the official site
 
-1. [Check the current shell in the `VS Code Terminal`](./vs-code.md#check-the-current-shell-in-the-vs-code-terminal).
+> [!NOTE]
+> See [Installing uv](https://docs.astral.sh/uv/getting-started/installation/).
 
-   ([`Windows`](./operating-system.md#linux) only) Now you use a `Linux` shell.
+1. To download the script and install `uv`,
 
-2. Follow the [installation instructions](https://docs.astral.sh/uv/getting-started/installation/) for [`macOS`](./operating-system.md#macos) and [`Linux`](./operating-system.md#linux), even if you use `Windows`.
+   [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
+
+   ```terminal
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+2. If your system doesn't have `curl`,
+
+   [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
+
+   ```terminal
+   wget -qO- https://astral.sh/uv/install.sh | sh
+   ```
 
 #### Install `uv` using `Nix`
 
