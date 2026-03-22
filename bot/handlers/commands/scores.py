@@ -30,15 +30,16 @@ async def handle_scores_async(lms_client: LmsApiClient, lab_id: str | None = Non
         # Format the response
         lines = [f"Pass rates for {lab_id}:"]
         
-        # pass_rates structure: {"lab_id": "...", "pass_rates": [...]}
-        rates = pass_rates.get("pass_rates", []) if isinstance(pass_rates, dict) else pass_rates
+        # API returns: [{"task": "...", "avg_score": 60.9, "attempts": 686}, ...]
+        rates = pass_rates if isinstance(pass_rates, list) else pass_rates.get("pass_rates", [])
         
         if not rates:
             return f"No pass rates available for {lab_id}."
         
         for rate in rates:
-            task_name = rate.get("task_name", rate.get("task", "Unknown Task"))
-            pass_rate = rate.get("pass_rate", rate.get("rate", 0))
+            task_name = rate.get("task", rate.get("task_name", "Unknown Task"))
+            # API uses avg_score, convert to percentage
+            pass_rate = rate.get("avg_score", rate.get("pass_rate", rate.get("rate", 0)))
             attempts = rate.get("attempts", 0)
             lines.append(f"- {task_name}: {pass_rate:.1f}% ({attempts} attempts)")
         

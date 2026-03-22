@@ -32,8 +32,7 @@ async def handle_labs_async(lms_client: LmsApiClient) -> str:
         lab_lines = []
         for lab in labs:
             title = lab.get("title", "Unknown Lab")
-            lab_id = lab.get("id", "?")
-            lab_lines.append(f"- {title} (ID: {lab_id})")
+            lab_lines.append(f"- {title}")
         
         return "Available labs:\n" + "\n".join(lab_lines)
         
