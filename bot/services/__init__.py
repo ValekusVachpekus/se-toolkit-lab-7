@@ -12,10 +12,18 @@ from .lms_api import (
     LmsConnectionError,
     LmsApiException,
 )
+from .llm_client import (
+    LlmClient,
+    TOOL_DEFINITIONS,
+    SYSTEM_PROMPT,
+)
 
 __all__ = [
     "LmsApiClient",
     "LmsApiError",
     "LmsConnectionError",
     "LmsApiException",
+    "LlmClient",
+    "TOOL_DEFINITIONS",
+    "SYSTEM_PROMPT",
 ]
